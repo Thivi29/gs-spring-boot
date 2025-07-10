@@ -17,7 +17,7 @@ pipeline {
                 S3_BUCKET=petclinicapp-10-07
                 BUILD_FILE_NAME=petclinicapp-v1.jar
                 LOCAL_FILE_PATH=/home/$USER/$BUILD_FILE_NAME
-
+                cp initial/target/spring-boot-initial-0.0.1-SNAPSHOT.jar initial/target/$BUILD_FILE_NAME
                 aws s3 cp $WORKSPACE/initial/target/$BUILD_FILE_NAME s3://$S3_BUCKET
 
                 output=$(aws ec2 describe-instances \
