@@ -33,7 +33,8 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no -i /home/jenkins/petclinicappkey.pem ubuntu@$ip << EOF
                     sudo aws s3 cp s3://$S3_BUCKET/$BUILD_FILE_NAME $LOCAL_FILE_PATH
                     sudo systemctl restart petclinicapp.service
-                    EOF
+                    echo "Updated and restarted on $ip"
+        EOF
                 done
                 '''
             }
