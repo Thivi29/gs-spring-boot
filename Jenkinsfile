@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 USER=petclinicapp
                 GROUP=petclinicapp
-                S3_BUCKET=petclinicapp
+                S3_BUCKET=petclinicapp-10-07
                 BUILD_FILE_NAME=petclinicapp-v1.jar
                 LOCAL_FILE_PATH=/home/$USER/$BUILD_FILE_NAME
 
